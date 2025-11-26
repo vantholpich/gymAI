@@ -5,7 +5,7 @@ import { Video, ResizeMode } from 'expo-av';
 import { Colors } from '../constants/Colors';
 
 interface UploadScreenProps {
-    onAnalyze: (videoUri: string) => void;
+    onAnalyze: (videoUri: string) => Promise<void>;
     onBack: () => void;
 }
 
@@ -34,7 +34,7 @@ export const UploadScreen: React.FC<UploadScreenProps> = ({ onAnalyze, onBack })
         setIsLoading(true);
         // Simulate processing or just pass the URI
         // In a real app, we might compress here.
-        onAnalyze(videoUri);
+        await onAnalyze(videoUri);
         setIsLoading(false);
     };
 

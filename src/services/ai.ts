@@ -16,7 +16,7 @@ import { Platform } from 'react-native';
 
 export const analyzeExercise = async (videoUri: string) => {
     try {
-        const model = genAI.getGenerativeModel({ model: "gemini-2.5-pro" });
+        const model = genAI.getGenerativeModel({ model: "gemini-2.5-flash" });
         let videoData: string;
 
         if (Platform.OS === 'web') {
