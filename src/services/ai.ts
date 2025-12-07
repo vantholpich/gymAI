@@ -36,9 +36,9 @@ export const analyzeExercise = async (videoUri: string) => {
             });
         } else {
             // Native implementation: Use FileSystem
-            const fileInfo = await FileSystem.getInfoAsync(videoUri);
-            if (!fileInfo.exists) throw new Error("File does not exist");
-            videoData = await FileSystem.readAsStringAsync(videoUri, { encoding: 'base64' });
+            const file = new FileSystem.File(videoUri);
+            if (!file.exists) throw new Error("File does not exist");
+            videoData = await file.base64();
         }
 
         const prompt = "Analyze this gym exercise video. Identify the exercise, critique the form, and provide 3 specific tips for improvement. Format the output with Markdown.";
