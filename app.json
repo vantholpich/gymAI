@@ -1,7 +1,7 @@
 {
   "expo": {
-    "name": "temp_app",
-    "slug": "temp_app",
+    "name": "GymAI",
+    "slug": "GymAI",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
@@ -13,7 +13,11 @@
       "backgroundColor": "#ffffff"
     },
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": true,
+      "bundleIdentifier": "com.vanthol.gymai",
+      "infoPlist": {
+        "ITSAppUsesNonExemptEncryption": false
+      }
     },
     "android": {
       "adaptiveIcon": {
@@ -25,6 +29,12 @@
     },
     "web": {
       "favicon": "./assets/favicon.png"
-    }
+    },
+    "extra": {
+      "eas": {
+        "projectId": "9f82f5ee-b3b1-4978-8446-62046a30719e"
+      }
+    },
+    "owner": "vanthol"
   }
 }
